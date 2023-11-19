@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
     }
 
 try {
-    const { email, name } = jwt.verify(authToken, "secret-key");
+    const { email, name } = jwt.verify(authToken, process.env.RDS_JWT );
     const user = await Users.findOne({where : {email}});
     res.locals.user = user;
     next();

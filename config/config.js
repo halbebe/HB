@@ -1,21 +1,23 @@
+requre('dotenv').config();
 
+module.exports = 
 {
   "development": {
-    "username": "halbebe",
-    "password": "halbe0458",
-    "database": "database_development",
-    "host": "halbe-database.cubohkxw2gxz.ap-southeast-2.rds.amazonaws.com",
+    "username": process.env.RDS_NM,
+    "password": process.env.RDS_PW,
+    "database": process.env.RDS_DB,
+    "host": `${process.env.RDS_EP}.ap-southeast-2.rds.amazonaws.com`,
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
+    "username": process.env.RDS_NM,
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
+    "username": process.env.RDS_NM,
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
