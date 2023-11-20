@@ -1,7 +1,6 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
-
 const productRouter = require("./routers/products.js");
 const userRouter = require("./routers/users.js");
 require('dotenv').config();
@@ -10,7 +9,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
-  res.send("안녕하세요 세계!");
+  res.send("HELL773H");
 })
 
 app.use("/api",[userRouter,productRouter]);
